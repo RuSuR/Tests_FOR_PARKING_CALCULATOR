@@ -1,0 +1,122 @@
+import org.junit.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.*;
+
+
+/**
+ * Created by LewdBenign on 05.08.2015.
+ */
+public class TestsForParkingCalculator {
+
+    private WebDriver driver;
+
+    @Before
+
+    public void setUp(){
+        driver = new FirefoxDriver();
+
+    }
+
+    @Test
+    public void Military_Times_Message_Available(){
+        driver.get("http://www.grr.org/ParkCalc.php");
+        //NOTICE FOR MILITARY TIMES ONLY
+        WebElement militaryTimeNotice = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/div/div/p/strong"));
+        Assert.assertEquals("**Please do not use military time increments in the calculator.  Doing so will result in inaccurate estimates", militaryTimeNotice.getText());
+    }
+    @Test
+    public void DateCalendar(){
+        driver.get("http://www.grr.org/ParkCalc.php");
+        //GET MAIN WINDOW HANDLE
+        String mainWindowHandle = driver.getWindowHandle();
+
+        //CLICK TO OPEN POP-UP
+        WebElement entryDateCalendar = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/table/tbody/tr[2]/td[2]/font/a/img"));
+        entryDateCalendar.click();
+
+        // GO TO POP-UP WINDOW
+        Set s = driver.getWindowHandles();
+        Iterator ite = s.iterator();
+        while(ite.hasNext())
+        {
+            String popupHandle = ite.next().toString();
+            if(!popupHandle.contains(mainWindowHandle))
+            {
+                driver.switchTo().window(popupHandle);
+            }
+        }
+        //CLICK ON A DATE
+        WebElement date1 = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[9]/td[2]/font/a"));
+        date1.click();
+
+        //RETURN TO MAIN WINDOW
+        driver.switchTo().window(mainWindowHandle);
+
+        //PAUSE FOR FEW SECONDS
+        try {
+            Thread.sleep(3000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+    @Test
+    public void Economy_Parking_Lot(){
+        driver.get("http://www.grr.org/ParkCalc.php");
+        //ECONOMY PARKING LOT
+        WebElement economyParking = driver.findElement(By.xpath("//Select[@id='Lot']/option[normalize-space(text())='Economy Parking']"));
+        economyParking.click();
+
+        //ENTRY TIME
+        WebElement entryTime = driver.findElement(By.id("EntryTime"));
+        entryTime.click();
+        entryTime.clear();
+        entryTime.sendKeys("00:00");
+        WebElement entryTimePM = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/table/tbody/tr[2]/td[2]/font/input[3]"));
+        entryTimePM.click();
+
+        //ENTRY DATE
+        WebElement entryDate = driver.findElement(By.id("EntryDate"));
+        entryDate.click();
+        entryDate.clear();
+        entryDate.sendKeys("5/12/2015");
+
+        //LEAVING TIME
+        WebElement leavingTime = driver.findElement(By.id("ExitTime"));
+        leavingTime.click();
+        leavingTime.clear();
+        leavingTime.sendKeys("00:05");
+        WebElement leavingTimePM = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/table/tbody/tr[3]/td[2]/font/input[3]"));
+        leavingTimePM.click();
+
+        //LEAVING DATE
+        WebElement leavingDate = driver.findElement(By.id("ExitDate"));
+        leavingDate.click();
+        leavingDate.clear();
+        leavingDate.sendKeys("5/12/2015");
+
+        //CALCULATE BUTTON
+        WebElement calcButton = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/div/div/p/input[2]"));
+        calcButton.click();
+
+        //COST FIELD
+        WebElement cost = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/table/tbody/tr[4]/td[2]/span[1]/font/b"));
+        Assert.assertEquals("$ 2.00", cost.getText());
+
+        //DURATION CALCULATION FIELD
+        WebElement durationField = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td/form/table/tbody/tr[4]/td[2]/span[2]/font/b"));
+        Assert.assertEquals("(0 Days, 0 Hours, 5 Minutes)",durationField.getText().trim());
+
+        //PAUSE FOR FEW SECONDS
+        try {
+            Thread.sleep(3000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    @After
+    public void Finish() {
+        driver.quit();
+    }
+}
