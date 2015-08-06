@@ -1,3 +1,9 @@
+TEST PLAN
+
+Project Name : PARKING CALCULATOR
+
+
+
 Project Description
 <Provide a short description of the purpose of the project. 
 This can be copied from section 1.0 of the Project Statement of Work. >
@@ -8,4 +14,110 @@ The scope should indicate what is being tested, is testing for a complete system
 
 Testing Assumptions/ Constraints/ Risks
 <This section identifies internal or external items or activities that could adversely impact the testing effort. >
+
+Assumptions
+<List the assumptions made while developing the test plan.  
+The assumptions identify external or internal items or activities that must remain true for the testing effort to be successful.  The assumptions if they turn false can impact testing schedules, testing content or create issues.  
+For example, testing data will be available on a planned date. >
+
+Constraints
+<List the external or internal items or activities that could constrain testing effort. 
+For example, the testing environment is only available from date1 to date2.
+A constraint can become an issue when testing activity cannot occur within the constraint. >
+
+Risks
+<Identify risks items or activities associated to testing that could impact the testing schedule, budget, content or quality.  
+A risk is a potential danger, peril or hazard that could prevent testing activities from being completed effectively. >
+
+Testing Objectives
+<Identify any testing objectives defined for testing.  
+The objectives can encompass the testing vision, critical considerations or standards for use in testing.  
+Identify each test objective using a Test Objective ID and tie the ID to a Test ID and Requirements ID. >
+
+Resource Requirements
+<This section identifies the staffing and hardware / software resources 
+required by this plan for the testing effort to be successful. >
+
+Staff Requirements
+<Provide sufficient information to identify the staffing and skills 
+required to perform the indicated testing and assign each staff member to a team, if appropriate.  
+Provide staffing for each type of test activity requiring support. >
+<The Resource table identifies the staffing, skills and responsibilities required to support this test plan. >
+
+Resource	    	        Skills              Required	            Training Needs	            Responsibilities
+Krasimir Boev
+Ralitsa Buyuklieva
+Petyr Ignatov    
+Petya Slavcheva
+
+Hardware Requirements
+<List the hardware (specially configured PC, servers, etc) required to perform testing defined in the test plan.  
+Identify the type of hardware required, hardware configuration needed and whether the hardware is installed 
+or needs to be ordered. >
+
+Software Requirements
+<List non-standard software products (for example, Windows XP) needed to satisfy testing configurations 
+for testing defined in the test plan.  The software is used to support the deliverable being tested.  
+Identify the software by title, version and indicate if the software is installed or needs to be ordered. >
+
+Testing Approach
+<This section provides a description of the general approach used to test the project deliverables. >
+
+Test to Execute
+<Identify the phases and types of testing covered by the test plan.  
+Include a description of each test phase or type.  The testing can include any or all of the following:  
+Unit, SIT, User Acceptance, and Production Verification, performance, 
+usability, migration, conversion, online, communications, regression or stress. >
+
+Testing Schedule
+<Identify the projected start and stop dates for each planned test.  
+List the test in chronological order and include the exit (success criteria) required for each test.  
+For example: >
+
+Phase: Test Type	          Projected Start Date	    Projected End Date              Exit (Success) Criteria
+
+
+Test Deliverables
+<Provide a list of planned deliverables expected from the testing activities.  
+Identify the deliverable, file name and location used to store the deliverable.  
+The deliverables can consist of test results, test plans, reports, test log or the results of other testing activities. >
+
+Testing Tools Used
+<Identify automated or other tools used for testing.  
+Explain the tools capabilities, the person having implementation responsibility 
+and the knowledge needed to install / use the tools. >
+
+Testing Approaches
+<Define the procedures used in the testing process.  
+The definition can include any of the following processes: Validation, Retesting, Approval, 
+and Status reporting (include timing, type or level of detail, and persons reporting and receiving reports).  
+Identify the criteria, and participants for making a final ("Go / No Go") decision.  
+Define the Setup and Configuration Management procedures needed to ensure appropriate components are tested, 
+appropriate data is used, and results are appropriately captured and stored. >
+
+Project Libraries
+<Identify the project libraries (programs, tools, data etc) used in the testing process; 
+include the location and path for accessing the libraries. >
+
+Test Data Requirements
+<Identify at a high level the sources, types of test data needed and how the test data will be gathered.  
+Indicate if the test data is manually generated, shared with other test groups or a production data extract.  
+Describe any dependencies (results of a production run, etc.) on gathering test data.  
+Indicate if the test data should be backed up prior to use, restored after use or saved after processing completes.  
+If separate test data is needed for specific phases and types of planned tests, 
+associate the appropriate test data to each planned test.
+Note:  Sub-heading can be used to further describe test data requirements 
+when the requirements for test data creation are complex or lengthy. >
+
+Test Case Development Strategy
+<Define the strategy used to develop test cases for the planned testing.  
+Identify how each test case is tied to a functional requirement.  
+To ensure all functional requirements are tested, build a table containing the headings “Functional Requirements ID”, 
+“Test Case ID”, “Test Case Description” and “Test Case Priority”. >
+
+Testing Environment
+<Identify the testing environment required for each test phase or type defined by the test plan.  
+Information can be presented in the form of a table containing test type and the environment 
+where the testing will be performed.  
+Provide information about specific requirements needed in the environment to execute the tests. >
 
