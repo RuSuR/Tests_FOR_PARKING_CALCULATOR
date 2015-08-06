@@ -7,6 +7,10 @@ Project Name : PARKING CALCULATOR
 Project Description
 <Provide a short description of the purpose of the project. 
 This can be copied from section 1.0 of the Project Statement of Work. >
+The purpose of the document is to collect, analyze, 
+and define the business requirements for a software calculator for parking rates. 
+Parking calculator feature is required to improve the convenience 
+of (Gerald R. Ford International Airport) travelers to estimate parking costs.
 
 Testing Scope
 <Define a scope for the testing described in this test plan.  
